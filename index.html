@@ -6,9 +6,43 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tasks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
-<h1>Tasks project</h1>
+
+<div class="container">
+    <h1>Tasks project</h1>
+    <div class="row">
+<div class="col s12">
+    <div class="card">
+    <div class="card-content">
+
+<h4>Add Task</h4>
+
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+    <div class="input-field col s6">
+    <input id="task" type="text">
+    <label for="task">New task</label>
+</div>
+    </div>
+    <input type="submit" value="Add Task" class="btn">
+        </form>
+</div>
+</div>
+<div class="card-action">
+    <h4>Tasks</h4>
+    <ul class="collection">
+
+    </ul>
+    <input type="submit" value="Delete all tasks" class="btn" id="del-tasks">
+</div>
+</div>
+</div>
+    </div>
 <script src="app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</div>
 </body>
 </html>
