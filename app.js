@@ -15,7 +15,7 @@ function deleteTask(e){
     }
 }
 
-function deleteTask(e){
+function deleteTask(){
    // tasksList.innerHTML = '';
     while(tasksList.firstChild){
         tasksList.removeChild(tasksList.firstChild);
