@@ -21,6 +21,7 @@ function deleteTaskFromLocalStorage(task){
     let tasks;
     if(localStorage.getItem("tasks") === null){
         tasks = [];
+
     } else {
         tasks = JSON.parse(localStorage.getItem('tasks'));
     }
@@ -37,6 +38,15 @@ function deleteTask(){
     while(tasksList.firstChild){
         tasksList.removeChild(tasksList.firstChild);
     }
+    deleteTaskFromLocalStorage();
+}
+
+function deleteTaskFromLocalStorage(){
+    if(localStorage.getItem("tasks") === null){
+        let tasks = [];
+        localStorage.setItem('tasks',JSON.stringify(tasks));
+    }
+    localStorage.removeItem('tasks');
 }
 
 function addTask(e){
