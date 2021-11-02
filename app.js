@@ -11,8 +11,25 @@ function deleteTask(e){
     if(e.target.textContent == 'X'){
         if(confirm('Do you want to delete this task?')){
             e.target.parentElement.remove();
+            task = event.target.parentElement.firstChild.textContent;
+            deleteTaskFromLocalStorage(task);
         }
     }
+}
+
+function deleteTaskFromLocalStorage(task){
+    let tasks;
+    if(localStorage.getItem("tasks") === null){
+        tasks = [];
+    } else {
+        tasks = JSON.parse(localStorage.getItem('tasks'));
+    }
+    tasks.forEach(function (tasksElement, index));
+    if(tasksElement === task){
+        tasks.splice(index, 1);
+    }
+});
+localStorage.setItem('tasks',JSON.stringify(tasks));
 }
 
 function deleteTask(){
