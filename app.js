@@ -48,7 +48,21 @@ function addTask(e){
     // add <li> to <ul>
     ul.appendChild(li);
     // clear input value
+
+    addTaskToLocalStorageTask(task);
     taskInput.value = '';
     // form submit event control
     e.preventDefault();
+}
+
+function addTaskToLocalStorageTask(task){
+    let tasks;
+    if(localStorage.getItem("tasks") === null){
+        tasks = [];
+    } else {
+        tasks = JSON.parse(localStorage.getItem('tasks'));
+    }
+    tasks.push(task);
+    localStorage.setItem('tasks',JSON.stringify(tasks));
+
 }
