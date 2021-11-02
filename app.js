@@ -16,7 +16,7 @@ function getTasksFromLocalStorage(){
     } else {
         tasks = JSON.parse(localStorage.getItem('tasks'));
     }
-    tasks.forEach(function (tasksElement));
+    tasks.forEach(function (tasksElement){;
     const task = taskInput.value;
     // create <li> element
     const li = document.createElement( 'li');
@@ -62,7 +62,7 @@ function deleteTaskFromLocalStorage(task){
     } else {
         tasks = JSON.parse(localStorage.getItem('tasks'));
     }
-    tasks.forEach(function (tasksElement, index));
+    tasks.forEach(function (tasksElement, index){;
     if(tasksElement === task){
         tasks.splice(index, 1);
     }
