@@ -6,6 +6,43 @@ const delTasksBtn = document.querySelector('#del-tasks');
 form.addEventListener( 'submit', addTask)
 tasksList.addEventListener('click', deleteTask);
 delTasksBtn.addEventListener('click', deleteTask);
+document.addEventListener('DOMContentLoaded', getTasksFromLocalStorage);
+
+function getTasksFromLocalStorage(){
+    let tasks;
+    if(localStorage.getItem("tasks") === null){
+        tasks = [];
+
+    } else {
+        tasks = JSON.parse(localStorage.getItem('tasks'));
+    }
+    tasks.forEach(function (tasksElement));
+    const task = taskInput.value;
+    // create <li> element
+    const li = document.createElement( 'li');
+    // define <li> CSS class
+    li.className = "collection-item";
+    // create text value for <li>
+    const text = document.createTextNode(tasksElement);
+    // add test value to <li>
+    li.appendChild(text);
+    // creat link element
+    const link = document.createElement('a');
+    // set href attribute
+    link.setAttribute('href', '#')
+    // add css style
+    link.className = 'secondary-content';
+    // add x text to link
+    link.appendChild(document.createTextNode('X'))
+    // add link to <li>
+    li.appendChild(link);
+    // find <ul> DOM component
+    const ul = document.querySelector('.collection');
+    // add <li> to <ul>
+    ul.appendChild(li);
+});
+
+}
 
 function deleteTask(e){
     if(e.target.textContent == 'X'){
